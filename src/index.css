@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root { height: 100%; }
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+@layer components {
+  /* Every panel in the app uses this — a clean white card, subtle border,
+     soft shadow. This one class controls the whole app's surface look. */
+  .card {
+    @apply bg-white border border-slate-200 rounded-2xl shadow-sm p-5;
+  }
+  .input {
+    @apply w-full rounded-lg bg-white border border-slate-300 px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 outline-none focus:border-brand focus:ring-2 focus:ring-brand/20 transition;
+  }
+  .btn-primary {
+    @apply bg-brand hover:bg-brand-dark disabled:opacity-50 disabled:cursor-not-allowed rounded-lg px-4 py-2.5 text-sm font-medium text-white shadow-sm transition;
+  }
+  .btn-ghost {
+    @apply rounded-lg px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition;
+  }
+  .btn-outline {
+    @apply rounded-lg px-4 py-2.5 text-sm font-medium text-slate-700 bg-white border border-slate-300 hover:bg-slate-50 transition;
+  }
+  .badge {
+    @apply px-2.5 py-1 rounded-full text-xs font-medium;
+  }
+}
